@@ -14,45 +14,45 @@ import 'swiper/css/scrollbar';
 
 const list = [
     {
+        location: "Sergeli",
+        classes: [
+            { title: "Boshlang‘ich sinflar", subTitle: "1–4", cost: "3 850 000" },
+            {
+                title: "O‘rta sinflar",
+                subTitle: "5-7",
+                cost: "4 080 000",
+                month: "3 500 000",
+                desc: "IELTS tayyorgarlik kursi",
+            },
+            { title: "Yuqori sinflar", subTitle: "8-11", payment: "16mln", cost: "4 500 000" },
+        ]
+    },
+    {
         location: "Chirchiq",
         classes: [
-            { title: "Yuqori sinflar", subTitle: "10-11", payment: "16mln" },
+            { title: "Boshlang‘ich sinflar", subTitle: "1–4", cost: "2 310 000" },
             {
                 title: "O‘rta sinflar",
                 subTitle: "5-9",
-                cost: "1 400 000",
+                cost: "2 840 000",
                 month: "3 500 000",
                 desc: "IELTS tayyorgarlik kursi",
             },
-            { title: "Boshlang‘ich sinflar", subTitle: "1-4" },
+            { title: "Yuqori sinflar", subTitle: "10-11", payment: "16mln", cost: "2 840 000" },
         ]
     },
     {
-        location: "Nurafshon",
+        location: "Chorvoq",
         classes: [
-            { title: "Yuqori sinflar", subTitle: "10-11", payment: "16mln" },
+            { title: "Boshlang‘ich sinflar", subTitle: "1–4", cost: "2 090 000" },
             {
                 title: "O‘rta sinflar",
                 subTitle: "5-9",
-                cost: "1 400 000",
+                cost: "2 310 000",
                 month: "3 500 000",
                 desc: "IELTS tayyorgarlik kursi",
             },
-            { title: "Boshlang‘ich sinflar", subTitle: "1-4" },
-        ]
-    },
-    {
-        location: "Xo'jakent",
-        classes: [
-            { title: "Yuqori sinflar", subTitle: "10-11", payment: "16mln" },
-            {
-                title: "O‘rta sinflar",
-                subTitle: "5-9",
-                cost: "1 400 000",
-                month: "3 500 000",
-                desc: "IELTS tayyorgarlik kursi",
-            },
-            { title: "Boshlang‘ich sinflar", subTitle: "1-4" },
+            { title: "Yuqori sinflar", subTitle: "10-11", payment: "16mln", cost: "2 310 000" },
         ]
     }
 ];
@@ -134,7 +134,7 @@ export const NewHomePayment = () => {
     const render = () => {
         return list.map(item => (
             <SwiperSlide className={classNames(cls.mainCard, )}>
-                <h2 className={cls.mainCard__title}>{item.location}</h2>
+                <h2 className={cls.mainCard__title}>{item.location} filiali</h2>
                 <div className={cls.mainCard__container}>
                     {
                         item.classes.map(inn => (
@@ -147,10 +147,10 @@ export const NewHomePayment = () => {
                                 }}
                             >
                                 <div className={cls.title}>
-                                    <h2 className={cls.title__sub} style={{color: !!item.color ? "#FFF" : ""}}>{item.title}</h2>
+                                    <h2 className={cls.title__sub} style={{color: !!item.color ? "#FFF" : ""}}>{inn.title}</h2>
                                     <h1 className={cls.title__main} style={{color: !!item.color ? "#FFF" : ""}}>
-                                        {item.payment ?? "14mln"}
-                                        <span className={cls.inner} style={{color: !!item.color ? "#FFF" : ""}}> / {item.subTitle} sinf</span>
+                                        {inn.cost ?? "14mln"}
+                                        <span className={cls.inner} style={{color: !!item.color ? "#FFF" : ""}}> / {inn.subTitle} sinf</span>
                                     </h1>
                                 </div>
                                 <HomeBtnUi
