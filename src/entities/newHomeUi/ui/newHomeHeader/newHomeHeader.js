@@ -167,7 +167,7 @@ export const NewHomeHeader = () => {
                         className={classNames({[cls.active]: isActive})}
                     >
                         {item.title}
-                        {item.path && <i className={`fa-solid fa-chevron-${isActive ? "up" : "down"}`}/>}
+                        {item.path && <i className={`fa-solid fa-chevron-${isActive ? "up" : "down"}`}></i>}
 
                         {item?.id === activePath?.id && activePath?.path  && (
                             <div
