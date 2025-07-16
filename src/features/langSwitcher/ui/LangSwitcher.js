@@ -6,13 +6,12 @@ import cls from "./langSwitcher.module.sass"
 import arrowDown from "shared/assets/icons/Trailing element-selected.svg"
 import arrowDownNigga from "shared/assets/icons/niggaDown.svg"
 import lang from "shared/assets/icons/language.svg"
-
-import langNigga from "shared/assets/icons/nigga.svg"
 import {useTranslation} from "react-i18next";
 import langEn from "shared/assets/icons/940156.png"
 import UzbSvg from "shared/assets/icons/twemoji_flag-uzbekistan.svg"
 import RusSvg from "shared/assets/icons/fxemoji_russianflag.svg"
 import classNames from "classnames";
+import langNigga from "shared/assets/icons/nigga.svg"
 
 
 const langs = [
