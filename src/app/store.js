@@ -1,6 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {oftenUsedSlice} from "entities/oftenUsed";
 import {alertSlice} from "features/alert";
+import {oftenUsedSlice} from "entities/oftenUsed";
+
+
+// import {timeTableSchool} from "pages/timeTable"
+
 
 const stringMiddleware = () => (next) => (action) => {
     if (typeof action === 'string') {

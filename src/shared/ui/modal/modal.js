@@ -1,11 +1,11 @@
 import {createPortal} from 'react-dom';
 import classNames from 'classnames';
 import React, {memo} from 'react';
+
 import cls from "./modal.module.sass";
 import close from "shared/assets/icons/cross.svg";
 
 export const Modal = memo(({children, active, setActive, extraClass, type = "simple", typeIcon}) => {
-
 
     const onClick = (target) => {
         if (target && typeof target.className === 'string') {
@@ -21,7 +21,7 @@ export const Modal = memo(({children, active, setActive, extraClass, type = "sim
             return (
                 createPortal(
                     <div
-                        className={classNames(cls.modal, "outClose",)}
+                        className={classNames(cls.modal, "outClose", )}
                         onClick={(e) => onClick(e.target)}
                     >
                         <div className={classNames(cls.modal__inner, extraClass)}>

@@ -1,10 +1,13 @@
+
 import {AppRouter} from "./routers";
 import '../i18n';
 
 function App() {
-    return (
-        <AppRouter/>
-    );
+        return (
+
+            <AppRouter/>
+
+        );
 }
 
 export default App;
