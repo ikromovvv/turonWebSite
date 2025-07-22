@@ -6,7 +6,7 @@ import {
     NewHomeHeader,
     NewHomePrincipal,
     NewHomeMain,
-     NewHomeClubs, NewHomeGrade, NewHomeAssessment, NewHomeFaculty, NewHomeContact,
+    NewHomeClubs, NewHomeGrade, NewHomeAssessment, NewHomeFaculty, NewHomeContact,
     NewHomeAdmissions,
 
     NewHomeIntroduction,
@@ -21,7 +21,6 @@ import {Alert} from "features/alert";
 
 
 export const NewHomeUi = () => {
-
 
 
     return (
@@ -54,16 +53,9 @@ export const NewHomeUi = () => {
 const Home = () => {
     return (
         <>
-
             <NewHomeMain/>
-
-
-              <NewHomePrincipal/>
-
-
-              <NewHomeDailyLife/>
-            {/**/}
-            {/**/}
+            <NewHomePrincipal/>
+            <NewHomeDailyLife/>
             <NewHomeAdmissions/>
 
         </>

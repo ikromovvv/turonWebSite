@@ -88,7 +88,20 @@ export const NewHomeMain = () => {
         });
     }, { scope: container });
 
-    const number = [800, 500, 400];
+    const number = [
+        {
+            number: 3,
+            text: "Filiallar soni"
+        },
+        {
+            number: 520,
+            text: "O'qiyotgan o'quvchilar"
+        },
+        {
+            number: 320,
+            text: "Xalqaro sertifikat sohiblari"
+        }
+    ];
 
 
 
@@ -139,11 +152,9 @@ export const NewHomeMain = () => {
                     {number.map((item, idx) => (
                         <div key={idx} className={`${cls.main__left_footer_number} main__left_footer_number`}>
                             <h1>
-                                +<CountUp start={0} end={item} duration={4} />
+                                +<CountUp start={0} end={item.number} duration={4} />
                             </h1>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </span>
+                            <span>{item.text}</span>
                         </div>
                     ))}
                 </div>
