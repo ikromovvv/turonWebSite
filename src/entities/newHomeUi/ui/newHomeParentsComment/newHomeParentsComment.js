@@ -23,7 +23,7 @@ const list = [
     }
 ]
 
-export const NewHomeParentsComment = () => {
+ const NewHomeParentsComment = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -103,3 +103,4 @@ export const NewHomeParentsComment = () => {
         </div>
     );
 };
+export default NewHomeParentsComment

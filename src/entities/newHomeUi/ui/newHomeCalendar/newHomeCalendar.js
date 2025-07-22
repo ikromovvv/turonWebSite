@@ -12,7 +12,7 @@ import cls from "./newHomeCalendar.module.sass";
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
-export const NewHomeCalendar = () => {
+ const NewHomeCalendar = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -156,3 +156,4 @@ export const NewHomeCalendar = () => {
         </div>
     );
 };
+export default NewHomeCalendar

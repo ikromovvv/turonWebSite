@@ -5,7 +5,7 @@ import image from "shared/assets/images/director.png";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 
-export const NewHomeIntroduction = () => {
+ const NewHomeIntroduction = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -87,3 +87,4 @@ export const NewHomeIntroduction = () => {
         </div>
     );
 };
+export default NewHomeIntroduction

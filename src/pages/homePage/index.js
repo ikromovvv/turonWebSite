@@ -1,3 +1,3 @@
 
 
-export {NewHomeUi} from "./ui/newHomeUi/newHomeUi"
+export {default as NewHomeUi} from "./ui/newHomeUi/newHomeUi"

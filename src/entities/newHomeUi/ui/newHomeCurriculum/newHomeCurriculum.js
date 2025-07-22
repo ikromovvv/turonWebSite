@@ -27,7 +27,7 @@ const card = [
     },
 ];
 
-export const NewHomeCurriculum = () => {
+ const NewHomeCurriculum = () => {
     const containerRef = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef([]);
@@ -125,3 +125,4 @@ export const NewHomeCurriculum = () => {
         </div>
     );
 };
+export default NewHomeCurriculum;

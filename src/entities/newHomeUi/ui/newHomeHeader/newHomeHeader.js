@@ -1,5 +1,5 @@
 import newLogo from "shared/assets/logo/Frame 2147223283.svg";
-import newLogoBlue from "shared/assets/logo/turonLogoBlue.svg";
+import newLogoBlue from "shared/assets/logo/Frame 2147223284.svg";
 import hamburger from "shared/assets/icons/hamburger.svg";
 import whiteHamburger from "shared/assets/icons/whitehamburger.svg";
 import cls from "./newHomeUi.module.sass";
@@ -10,10 +10,11 @@ import {HomeBtnUi} from "shared/ui/homeBtnUi/homeBtnUi";
 import {useLocation, useNavigate} from "react-router";
 import LangSwitcher from "features/langSwitcher/ui/LangSwitcher";
 import {useTranslation} from "react-i18next";
+import {HomeNewForm} from "features/homeNewForm";
 
 
 
-export const NewHomeHeader = () => {
+ const NewHomeHeader = () => {
     const { t, i18n } = useTranslation();
 
     const headerList = useMemo(() => [
@@ -93,6 +94,7 @@ export const NewHomeHeader = () => {
     const [activeMenu, setActiveMenu] = useState(false);
     const [activePath, setActivePath] = useState(null);
     const [activeFormTitle, setActiveFormTitle] = useState(null);
+    const [activeForm, setActiveForm] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -197,10 +199,15 @@ export const NewHomeHeader = () => {
                 </>
             );
         });
-
+    const onCLickLogo = () => {
+        navigate("/");
+        setActive(null);
+        setActivePath(null);
+        setActiveMenu(false);
+    }
     return (
         <div className={classNames(cls.header, {[cls.scrolled]: scrolled})}>
-            <div className={cls.header__logo}>
+            <div onClick={onCLickLogo} className={cls.header__logo}>
                 <img src={scrolled ? newLogoBlue : newLogo} alt="turon-logo"/>
             </div>
 
@@ -210,7 +217,7 @@ export const NewHomeHeader = () => {
 
             <div className={classNames(cls.header__btns)}>
 
-                <HomeBtnUi extraClass={cls.contact} onClick={() => navigate("/login")} type="request">{t("homeHeader.apply")}</HomeBtnUi>
+                <HomeBtnUi extraClass={cls.contact} onClick={() => setActiveForm(true)} type="request">{t("homeHeader.apply")}</HomeBtnUi>
                 <LangSwitcher type={"home"} extraClass={scrolled ? "" : cls.header__lang}/>
                 <div onClick={() => setActiveMenu(!activeMenu)} className={cls.header__burger}>
                     <img src={scrolled ? whiteHamburger : hamburger} alt="menu"/>
@@ -257,6 +264,8 @@ export const NewHomeHeader = () => {
                 </ul>
             </div>
 
+            <HomeNewForm activeForm={activeForm} setActiveForm={setActiveForm}/>
         </div>
     );
 };
+export default NewHomeHeader

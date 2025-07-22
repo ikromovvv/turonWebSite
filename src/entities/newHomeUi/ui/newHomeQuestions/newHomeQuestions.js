@@ -19,7 +19,7 @@ const list = [
     }
 ]
 
-export const NewHomeQuestions = () => {
+ const NewHomeQuestions = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -94,3 +94,4 @@ export const NewHomeQuestions = () => {
         </div>
     );
 };
+export default NewHomeQuestions;

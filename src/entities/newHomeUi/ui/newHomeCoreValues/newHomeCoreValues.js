@@ -33,7 +33,7 @@ const card = [
     }
 ]
 
-export const NewHomeCoreValues = () => {
+ const NewHomeCoreValues = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -120,3 +120,5 @@ export const NewHomeCoreValues = () => {
         </div>
     );
 };
+
+export default NewHomeCoreValues;

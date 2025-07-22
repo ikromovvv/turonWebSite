@@ -12,7 +12,7 @@ const locations = [
     {name: "Sergili"},
     {name: "chirchiq"},
 ]
-export const NewHomeContact = () => {
+ const NewHomeContact = () => {
 
     const [selectedItem, setSelectedItem] = useState(locations[0].name)
 
@@ -161,3 +161,4 @@ export const NewHomeContact = () => {
         </div>
     )
 }
+export default NewHomeContact

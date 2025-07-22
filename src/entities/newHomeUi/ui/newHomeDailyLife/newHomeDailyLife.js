@@ -29,7 +29,7 @@ const dataImg = [
     image8
 ]
 
-export const NewHomeDailyLife = () => {
+ const NewHomeDailyLife = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const imagesRef = useRef(null);
@@ -114,3 +114,4 @@ export const NewHomeDailyLife = () => {
         </div>
     );
 };
+export default NewHomeDailyLife

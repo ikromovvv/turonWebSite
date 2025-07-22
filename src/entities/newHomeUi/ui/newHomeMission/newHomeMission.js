@@ -7,7 +7,7 @@ import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import classNames from "classnames";
 
-export const NewHomeMission = () => {
+ const NewHomeMission = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const headerRef1 = useRef(null);
@@ -105,3 +105,4 @@ export const NewHomeMission = () => {
         </div>
     );
 };
+export default NewHomeMission

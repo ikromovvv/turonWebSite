@@ -39,7 +39,7 @@ const renderFooterItem = [
 ]
 
 
-export const NewHomeFaculty = () => {
+ const NewHomeFaculty = () => {
 
     const renderFooter = () => {
         return renderFooterItem.map(item => (
@@ -96,4 +96,4 @@ export const NewHomeFaculty = () => {
 
     );
 };
-
+export default NewHomeFaculty

@@ -15,7 +15,7 @@ const grades = [
     { id: 4, grade: "Grade 10-11" },
 ];
 
-export const NewHomeGrade = () => {
+ const NewHomeGrade = () => {
     const [active, setActive] = useState(grades[0].id);
     const [activeBox, setActiveBox] = useState(1);
 
@@ -160,3 +160,4 @@ export const NewHomeGrade = () => {
         </div>
     );
 };
+export default NewHomeGrade

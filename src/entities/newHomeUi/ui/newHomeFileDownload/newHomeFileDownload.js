@@ -35,7 +35,7 @@ const list = [
     }
 ]
 
-export const NewHomeFileDownload = () => {
+const NewHomeFileDownload = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -133,3 +133,4 @@ export const NewHomeFileDownload = () => {
         </div>
     );
 };
+export default NewHomeFileDownload

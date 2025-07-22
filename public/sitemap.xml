@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://tisedu.uz/</loc>
+        <loc>https://tisedu.uz/</loc>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>http://tisedu.uz/qabul</loc>
+        <loc>https://tisedu.uz/about</loc>
         <priority>0.90</priority>
     </url>
     <url>
-        <loc>http://tisedu.uz/biz-haqimizda</loc>
+        <loc>https://tisedu.uz/admissions</loc>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>http://tisedu.uz/boglanish</loc>
+        <loc>https://tisedu.uz/faculty</loc>
         <priority>0.80</priority>
     </url>
 </urlset>

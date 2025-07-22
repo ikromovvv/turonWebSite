@@ -13,7 +13,8 @@ export const PhoneController = ({name  , control , rules , onChange , onChangeSt
             render={({ field }) => (
                 <PhoneInput
                     inputClass={classNames(cls.label__input, extraClass , {
-                        [cls.form] : typeClass === "form"
+                        [cls.form] : typeClass === "form",
+                        [cls.request] : typeClass === "request"
                     })}
                     specialLabel={''}
                     country={'uz'}

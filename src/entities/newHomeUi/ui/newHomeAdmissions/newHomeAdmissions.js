@@ -11,14 +11,24 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import {Textarea} from "shared/ui/textArea";
 import telegramIcon from "shared/assets/icons/telegram.svg";
 import instagramIcon from "shared/assets/icons/instagram.svg";
+import {API_URL, useHttp} from "shared/api/base";
+import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {onAddAlertOptions} from "features/alert/model/slice/alertSlice";
+import {PhoneController} from "shared/ui/phoneController/phoneController";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export const NewHomeAdmissions = () => {
+ const NewHomeAdmissions = () => {
     const [active, setActive] = useState(false);
     const containerRef = useRef(null);
     const titleRef = useRef(null);
     const cardsRef = useRef(null);
+    const [phone , setPhone] = useState("+998")
+
+    const {request} = useHttp()
+    const {register , handleSubmit , control , reset} = useForm()
+    const dispatch = useDispatch()
     const icons = [
         {
             icon: telegramIcon,
@@ -60,9 +70,24 @@ export const NewHomeAdmissions = () => {
 
     }, { scope: containerRef });
 
+    const onSubmit = (data) => {
+
+
+        request(`${API_URL}Lead/lead_create/`, "POST", JSON.stringify({...data , type: "homePage"})).then((res) => {
+            dispatch(onAddAlertOptions({
+                status: true,
+                type: "success",
+                msg: 'Muvaffaqiyatli yuborildi'
+            }))
+            setActive(false)
+            reset()
+            setPhone("+998")
+        }).catch((err) => {})
+    }
+
     return (
         <div ref={containerRef} className={cls.admission} id={"quickLinks"}>
-            <h1 ref={titleRef} className={cls.admission__title}>
+            <h1 title={"Turon dagi kerakli bulimlar"} ref={titleRef} className={cls.admission__title}>
                 Sizga kerakli bo‘limlar shu yerda.
                 <p className={cls.admission__title_span}>
                     Eng ko‘p tashrif buyuriladigan sahifalarga to‘g‘ridan-to‘g‘ri kirish havolalari.
@@ -72,7 +97,7 @@ export const NewHomeAdmissions = () => {
             <div ref={cardsRef} className={cls.admission__wrapper}>
                 <div className={`${cls.admission__wrapper_box} admission-block`}>
                     <div className={cls.admission__wrapper_box_main}>
-                        <h2 className={cls.admission__wrapper_box_title}>
+                        <h2 title={"Turon ga qabul"} className={cls.admission__wrapper_box_title}>
                             📥 Qabul (Admissions)
                             <div className={cls.admission__wrapper_box_title_span}>
                                 Maktabga qabul bo‘yicha to‘liq ma’lumot oling
@@ -149,12 +174,14 @@ export const NewHomeAdmissions = () => {
             <Modal extraClass={cls.modal} typeIcon active={active} setActive={setActive}>
                 <h2>Ariza qoldirish</h2>
                 <Form typeSubmit>
-                    <Input extraClassName={cls.modal__input} placeholder={"Ism"} />
-                    <Input extraClassName={cls.modal__input} placeholder={"Familiya"} />
-                    <Input extraClassName={cls.modal__input} placeholder={"Telefon raqami"} type={"number"} />
-                    <HomeBtnUi type={"contact"} extraClass={cls.modal__btn} children={"Yuborish"} />
+                    <Input name={"name"} register={register} extraClassName={cls.modal__input} placeholder={"Ism"} />
+                    <Input name={"surname"} register={register} extraClassName={cls.modal__input} placeholder={"Familiya"} />
+                    <PhoneController canChange onChange={(value) => setPhone(value)} typeClass={"request"}   control={control}  name={"phone"} extraClassName={cls.modal__phone} />
+
+                    <HomeBtnUi onClick={handleSubmit(onSubmit)} type={"contact"} extraClass={cls.modal__btn} children={"Yuborish"} />
                 </Form>
             </Modal>
         </div>
     );
 };
+export default NewHomeAdmissions

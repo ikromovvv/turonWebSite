@@ -40,7 +40,7 @@ const list = [
     },
 ]
 
-export const NewHomeSchoolLife = () => {
+ const NewHomeSchoolLife = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const sliderRef = useRef(null);
@@ -166,3 +166,4 @@ export const NewHomeSchoolLife = () => {
         </div>
     );
 };
+export default NewHomeSchoolLife;

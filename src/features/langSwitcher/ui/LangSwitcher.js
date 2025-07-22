@@ -51,7 +51,7 @@ const LangSwitcher = ({extraClass , type}) => {
     const [active, setActive] = useState(false)
     const [activeLang,setActiveLang] = useState("Uz")
 
-    console.log("dasd")
+
 
     const onChangeLanguage = (type) => {
         i18n.changeLanguage(type.value)

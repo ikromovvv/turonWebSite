@@ -74,8 +74,7 @@ const list = [
 //     { title: "Boshlang‘ich sinflar", subTitle: "1-4" },
 //     { title: "Boshlang‘ich sinflar", subTitle: "1-4" },
 // ]
-
-export const NewHomePayment = () => {
+ const NewHomePayment = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -192,3 +191,4 @@ export const NewHomePayment = () => {
         </div>
     );
 };
+export default NewHomePayment

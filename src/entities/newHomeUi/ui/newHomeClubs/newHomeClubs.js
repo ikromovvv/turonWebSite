@@ -69,7 +69,7 @@ const renderFooterItem = [
 
 ]
 
-export const NewHomeClubs = () => {
+ const NewHomeClubs = () => {
 
     const render = () => {
         return renderItem.map(item => (
@@ -222,3 +222,4 @@ export const NewHomeClubs = () => {
     );
 };
 
+export default NewHomeClubs;

@@ -22,7 +22,7 @@ import {Modal} from "shared/ui/modal";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-export const NewHomeMain = () => {
+ const NewHomeMain = () => {
     const container = useRef(null);
     const footerRef = useRef(null);
     const titleRef = useRef(null);
@@ -31,7 +31,7 @@ export const NewHomeMain = () => {
     const [active , setActive] = useState(false)
     const [phone , setPhone] = useState("")
     const {request} = useHttp()
-    const {handleSubmit , register , control ,reset} = useForm()
+    const {handleSubmit , register  , control ,reset} = useForm()
     const dispatch = useDispatch()
     const {t} = useTranslation()
     const [activeVideo , setActiveVideo] = useState(false)
@@ -93,34 +93,39 @@ export const NewHomeMain = () => {
 
 
     const onClick = (data) => {
+        const splitWord = data?.name.split(" ")
 
         const res = {
-            ...data,
+            name: splitWord ? splitWord[0] : data?.name,
+            surname: splitWord[1] ? splitWord[1] : data?.name,
             type: "home",
             phone: phone
         }
-        console.log(res)
+
+
         request(`${API_URL}Lead/lead_create/`, "POST", JSON.stringify(res))
             .then((res)  => {
-                console.log(res);
+
                 dispatch(onAddAlertOptions({
                     status: true,
                     type: "success",
                     msg: 'Muvaffaqiyatli yuborildi'
                 }))
+                reset()
+
             })
             .catch((err) => {
                 dispatch(onAddAlertOptions({
                     status: true,
                     type: "error",
-                    msg: 'Serverda hatolik yoki lead allaqachon yuborilgan'
+                    msg: 'Lead allaqachon yuborilgan'
                 }))
             });
     }
     return (
         <div ref={container} id="homepage" className={cls.main}>
             <div className={cls.main__left}>
-                <h1 ref={titleRef} className={cls.main__left_title}>
+                <h1 title={"Turon xalqaro maktabi"} ref={titleRef} className={cls.main__left_title}>
                     {t("homeMain.title")} {window.innerWidth > 1050 ? <br /> : null} {t("homeMain.subTitle")} <br />
                     <span>{t("homeMain.blueTitle")}</span>
                 </h1>
@@ -176,7 +181,7 @@ export const NewHomeMain = () => {
                 <div className={`${cls.main__left_footer} ${cls.main__right_disappear}`}>
                     {number.map((item, idx) => (
                         <div key={idx} className={`${cls.main__left_footer_number} main__left_footer_number`}>
-                            <h1>
+                            <h1 title={"turon statistika"}>
                                 +<CountUp start={0} end={item} duration={4} />
                             </h1>
                             <span>
@@ -198,3 +203,4 @@ export const NewHomeMain = () => {
         </div>
     );
 };
+export default NewHomeMain

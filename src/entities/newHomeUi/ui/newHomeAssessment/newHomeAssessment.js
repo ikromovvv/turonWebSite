@@ -43,7 +43,7 @@ const boxes = [
     },
 ]
 
-export const NewHomeAssessment = () => {
+ const NewHomeAssessment = () => {
 
     const [active, setActive] = useState(boxes[1])
     const boxRefs = useRef([]);
@@ -142,3 +142,4 @@ export const NewHomeAssessment = () => {
     );
 };
 
+export default NewHomeAssessment;
