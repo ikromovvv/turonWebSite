@@ -100,9 +100,9 @@ const locations = [
                 break
             case "Sergili" :
                 return <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6002.598757406476!2d69.21117262052368!3d41.215245940243776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae61ab41db49f1%3A0x889c9f788b1c7aea!2sTuron%20xalqaro%20maktabi!5e0!3m2!1sru!2s!4v1733480259416!5m2!1sru!2s"
+                    src="https://www.google.com/maps/embed?pb=!1m25!1m12!1m3!1d461.5298027686849!2d69.21764503132258!3d41.228823993817905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m10!3e3!4m4!1s0x38ae613b61790599%3A0x479cc43162068513!3m2!1d41.228993599999995!2d69.2177664!4m3!3m2!1d41.228961399999996!2d69.2179048!5e1!3m2!1sru!2s!4v1754131902044!5m2!1sru!2s"
                     allowFullScreen="" loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    referrerPolicy="no-referrer-when-downgrade"/>
                 break
             case "Xo’jakent" :
                 return <iframe
