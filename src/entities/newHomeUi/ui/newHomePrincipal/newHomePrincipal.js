@@ -43,8 +43,7 @@ const list = [
         image: img3
     },
 ];
-
-export const NewHomePrincipal = () => {
+ const NewHomePrincipal = () => {
     const container = useRef(null);
     const headerRef = useRef(null);
     const cardsRef = useRef(null);
@@ -107,3 +106,4 @@ export const NewHomePrincipal = () => {
         </div>
     );
 };
+export default NewHomePrincipal
